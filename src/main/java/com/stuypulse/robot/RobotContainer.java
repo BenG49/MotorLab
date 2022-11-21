@@ -23,7 +23,7 @@ public class RobotContainer {
     public final Gamepad driver = new SimKeyGamepad();
     
     // Subsystem
-    private Robot robot = new Romi();
+    private Robot robot = new SimRomi();
 
     // Autons
     private static SendableChooser<Command> autonChooser = new SendableChooser<>();
@@ -58,7 +58,7 @@ public class RobotContainer {
         autonChooser.addOption("Turn Right", new MotorCommand(robot, DriveFunctions::turnRight));
         autonChooser.addOption("Turn Left", new MotorCommand(robot, DriveFunctions::turnLeft));
         autonChooser.addOption("Arc Right", new MotorCommand(robot, DriveFunctions::arcRight));
-        autonChooser.addOption("Arc Right", new MotorCommand(robot, DriveFunctions::arcLeft));
+        autonChooser.addOption("Arc Left", new MotorCommand(robot, DriveFunctions::arcLeft));
         autonChooser.addOption("Stop Distance", new MotorCommand(robot, DriveFunctions::stopDistance));
         autonChooser.addOption("Bang-bang", new MotorCommand(robot, DriveFunctions::bangBang));
         autonChooser.addOption("Better Control", new MotorCommand(robot, DriveFunctions::betterControl));

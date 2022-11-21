@@ -29,7 +29,7 @@ public interface Settings {
     }
 
     public interface Field {
-        Transform2d FIELD_OFFSET = new Transform2d(new Translation2d(8, 4), new Rotation2d(0));
+        Transform2d FIELD_OFFSET = new Transform2d(new Translation2d(0, 0), new Rotation2d(0));
     }
 
     public interface Romi {
