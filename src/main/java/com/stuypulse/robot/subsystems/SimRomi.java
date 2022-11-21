@@ -103,8 +103,6 @@ public class SimRomi extends Robot {
 	public void periodic() {
 	  	odometry.update(getRotation2d(), sim.getLeftPositionMeters(), sim.getRightPositionMeters());
 
-		SmartDashboard.putNumber("left voltage", leftVoltage);
-  
 		sim.setInputs(
 			clamp(leftVoltage),
 			clamp(rightVoltage)
@@ -112,7 +110,7 @@ public class SimRomi extends Robot {
 
 		sim.update(0.02);
 
-		field.setRobotPose(getPose().plus(Settings.Field.FIELD_OFFSET));
+		field.setRobotPose(new Pose2d(getPose().getTranslation().plus(Settings.Field.FIELD_OFFSET), getPose().getRotation()));
 
 		SmartDashboard.putNumber("Left Velocity", sim.getLeftVelocityMetersPerSecond());
 		SmartDashboard.putNumber("Right Velocity", sim.getRightVelocityMetersPerSecond());

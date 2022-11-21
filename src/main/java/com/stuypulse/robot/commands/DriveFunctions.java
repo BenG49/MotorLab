@@ -53,6 +53,8 @@ public class DriveFunctions {
             right.set(-1);
         }
     }
+    
+    public static void lessBang(Motor left, Motor right) {}
 
     public static void betterControl(Motor left, Motor right) {
         double error = 10 - left.getDistance();
@@ -61,4 +63,5 @@ public class DriveFunctions {
         right.set(error * 0.1);
     }
 
+    public static void bestestControl(Motor left, Motor right) {}
 }
